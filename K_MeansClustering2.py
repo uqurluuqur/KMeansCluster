@@ -2,7 +2,7 @@
 """
 Created on Wed Jul  7 16:17:44 2021
 
-@author: Pc
+@author: Uğur Levent Akaoğlu
 """
 
 import numpy as np
