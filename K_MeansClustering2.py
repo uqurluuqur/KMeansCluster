@@ -46,22 +46,16 @@ class KMeans:
             mean=[]
             the_cluster=df.loc[df['cluster']==i]
             the_cluster= the_cluster.drop(['cluster'],axis= 1)
-            #print(the_cluster.head(),"dffff")
             the_cluster=the_cluster.to_numpy()
-            #print(the_cluster.shape,'hüüüüüüüüü')
             deneme= np.mean(the_cluster,axis=0)
-            #print('deneme',deneme.shape)
             returnle.append(deneme)
             
         returnle= np.array(returnle)
-        #print(returnle.shape,"asdasddasdasd")
         return returnle
 
     def plotting_(self,x,cluster,centroids):
         x=self.PCA_(x)
-        #print(centroids.shape,'pcasız')
         centroid=self.PCA_(centroids)
-        #print(centroid.shape,'pcalı ')
         groups = np.unique(cluster)
         for i in groups:
             plt.scatter(x[cluster == i , 0] , x[cluster == i , 1] , label = i)
@@ -91,7 +85,6 @@ class KMeans:
             df= pd.DataFrame(data=x)
             df['cluster']= cluster
 
-            print(s)
    
             df=df.drop(['cluster'],axis=1)
             if self.plot_steps:
